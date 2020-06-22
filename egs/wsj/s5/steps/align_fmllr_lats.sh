@@ -61,7 +61,12 @@ cp $lang/phones.txt $dir || exit 1;
 
 cp $srcdir/{tree,final.mdl} $dir || exit 1;
 cp $srcdir/final.alimdl $dir 2>/dev/null
-cp $srcdir/final.occs $dir;
+
+# "It's the per-transition-id occupation counts. They are rarely needed
+# -- e.g. I think they might be used somewhere in the basis-fMLLR
+# scripts."
+# cp $srcdir/final.occs $dir;
+
 splice_opts=`cat $srcdir/splice_opts 2>/dev/null` # frame-splicing options.
 cp $srcdir/splice_opts $dir 2>/dev/null # frame-splicing options.
 cmvn_opts=`cat $srcdir/cmvn_opts 2>/dev/null`
