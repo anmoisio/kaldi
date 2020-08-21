@@ -83,7 +83,7 @@ if [ $stage -le 0 ]; then
         lattice-add-penalty --word-ins-penalty=$wip ark:- ark:- \| \
         lattice-best-path --word-symbol-table=$symtab ark:- ark,t:- \| \
         utils/int2sym.pl -f 2- $symtab \| \
-        python3 common/clean_wertext.py - \| \
+        utils/clean_wertext.py - \| \
         $hyp_filtering_cmd '>' $dir/scoring_kaldi/penalty_$wip/LMWT.txt || exit 1;
     fi
 
